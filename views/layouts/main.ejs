@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= typeof title !== 'undefined' ? title + ' · CEMS' : 'CEMS' %></title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <%- include('../partials/navbar') %>
+  <main class="page-wrap">
+    <div class="container">
+      <%- body %>
+    </div>
+  </main>
+  <%- include('../partials/footer') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

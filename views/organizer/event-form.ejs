@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-body">
+    <h1 style="color: var(--color-primary);"><%= event ? 'Edit Event' : 'Create New Event' %></h1>
+    <form id="event-form" data-event-id="<%= event ? event._id : '' %>">
+      <div class="form-group">
+        <label for="title">Event Title</label>
+        <input class="form-control" type="text" id="title" name="title" value="<%= event ? event.title : '' %>" required />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" name="description" rows="4" required><%= event ? event.description : '' %></textarea>
+      </div>
+      <div class="grid grid-2">
+        <div class="form-group">
+          <label for="venue">Venue</label>
+          <input class="form-control" type="text" id="venue" name="venue" value="<%= event ? event.venue : '' %>" required />
+        </div>
+        <div class="form-group">
+          <label for="capacity">Capacity</label>
+          <input class="form-control" type="number" min="1" id="capacity" name="capacity" value="<%= event ? event.capacity : '' %>" required />
+        </div>
+        <div class="form-group">
+          <label for="startDate">Start Date</label>
+          <input class="form-control" type="datetime-local" id="startDate" name="startDate" required />
+        </div>
+        <div class="form-group">
+          <label for="endDate">End Date</label>
+          <input class="form-control" type="datetime-local" id="endDate" name="endDate" required />
+        </div>
+        <div class="form-group">
+          <label for="registrationDeadline">Registration Deadline</label>
+          <input class="form-control" type="datetime-local" id="registrationDeadline" name="registrationDeadline" required />
+        </div>
+        <div class="form-group">
+          <label for="status">Status</label>
+          <select class="form-control" id="status" name="status">
+            <option value="draft">Draft</option>
+            <option value="published">Published</option>
+            <option value="ongoing">Ongoing</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Save Event</button>
+    </form>
+  </div>
+</div>
+<script src="/js/main.js"></script>

@@ -1,0 +1,25 @@
+<nav class="navbar">
+  <div class="container">
+    <a href="/" class="navbar-brand">
+      <span class="accent-dot"></span> CEMS
+    </a>
+    <ul class="navbar-links">
+      <li><a href="/events">Events</a></li>
+      <% if (typeof currentUser !== 'undefined' && currentUser) { %>
+        <% if (currentUser.role === 'student') { %>
+          <li><a href="/dashboard">My Dashboard</a></li>
+          <li><a href="/dashboard/certificates">Certificates</a></li>
+        <% } else if (currentUser.role === 'organizer') { %>
+          <li><a href="/organizer/dashboard">Organizer Panel</a></li>
+        <% } else if (currentUser.role === 'admin') { %>
+          <li><a href="/admin/dashboard">Admin Panel</a></li>
+        <% } %>
+        <li><span class="badge-role"><%= currentUser.role %></span></li>
+        <li><a href="/logout">Logout</a></li>
+      <% } else { %>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register" class="btn btn-accent btn-sm">Sign Up</a></li>
+      <% } %>
+    </ul>
+  </div>
+</nav>

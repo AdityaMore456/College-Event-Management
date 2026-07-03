@@ -1,0 +1,8 @@
+node_modules/
+.env
+public/uploads/certificates/*
+!public/uploads/certificates/.gitkeep
+public/uploads/banners/*
+!public/uploads/banners/.gitkeep
+*.log
+.DS_Store

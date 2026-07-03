@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="banner" style="height: 220px;"></div>
+  <div class="card-body">
+    <span class="status-pill gold"><%= event.status %></span>
+    <h1 class="mt-24" style="color: var(--color-primary);"><%= event.title %></h1>
+    <p class="event-meta">📍 <%= event.venue %> &nbsp;·&nbsp; 🗓 <%= new Date(event.startDate).toDateString() %></p>
+    <p class="event-meta">Organized by <%= event.organizerId ? event.organizerId.name : 'CEMS' %></p>
+    <p class="mt-24"><%= event.description %></p>
+    <button id="register-btn" class="btn btn-accent mt-24" data-event-id="<%= event._id %>">
+      Register for this Event
+    </button>
+    <div id="qr-result" class="mt-24"></div>
+  </div>
+</div>
+<script src="/js/main.js"></script>

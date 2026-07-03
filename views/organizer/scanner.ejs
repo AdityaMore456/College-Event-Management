@@ -1,0 +1,24 @@
+<div class="page-header">
+  <h1>Scan Attendance</h1>
+  <p>Point the camera at a student's QR pass to check them in.</p>
+</div>
+
+<div class="scanner-frame">
+  <div id="qr-reader" style="width: 100%;"></div>
+</div>
+<div id="scan-result" class="scan-result" style="display:none;"></div>
+
+<div class="card mt-24">
+  <div class="card-body">
+    <h3 style="color: var(--color-primary);">Manual Check-in</h3>
+    <p class="event-meta">Use this fallback if a student's QR code can't be scanned.</p>
+    <div class="flex gap-12">
+      <input class="form-control" type="text" id="manual-registration-id" placeholder="Registration ID" />
+      <button class="btn btn-outline" id="manual-checkin-btn">Mark Present</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/html5-qrcode" defer></script>
+<script src="/js/scanner.js" data-event-id="<%= eventId %>" defer></script>
+<script src="/js/main.js"></script>

@@ -1,0 +1,23 @@
+<div class="page-header flex-between">
+  <div>
+    <h1>Campus Events</h1>
+    <p>Discover and register for upcoming events.</p>
+  </div>
+</div>
+
+<div class="grid grid-3">
+  <% events.forEach(function(event) { %>
+    <a href="/events/<%= event._id %>" class="card event-card">
+      <div class="banner"></div>
+      <div class="card-body">
+        <span class="status-pill <%= event.status === 'ongoing' ? 'gold' : '' %>"><%= event.status %></span>
+        <h3 class="mt-24"><%= event.title %></h3>
+        <p class="event-meta">📍 <%= event.venue %></p>
+        <p class="event-meta">🗓 <%= new Date(event.startDate).toDateString() %></p>
+      </div>
+    </a>
+  <% }) %>
+  <% if (events.length === 0) { %>
+    <p>No events published yet. Check back soon.</p>
+  <% } %>
+</div>

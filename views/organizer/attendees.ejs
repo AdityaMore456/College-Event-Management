@@ -1,0 +1,24 @@
+<div class="page-header flex-between">
+  <div>
+    <h1>Attendees</h1>
+    <p>Registrations and attendance for this event.</p>
+  </div>
+  <div class="flex gap-12">
+    <a href="/api/dashboard/events/<%= eventId %>/export" class="btn btn-outline">Export CSV</a>
+    <button id="generate-certs-btn" class="btn btn-accent" data-event-id="<%= eventId %>">Generate Certificates</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <table class="data-table" id="attendees-table">
+      <thead>
+        <tr><th>Name</th><th>Email</th><th>Department</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="4" class="text-center">Loading attendees…</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script src="/js/main.js" data-event-id="<%= eventId %>"></script>
